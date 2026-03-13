@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Our One Week ❤️</title>
+
+<style>
+body{
+margin:0;
+background:linear-gradient(180deg,#1a001a,#000);
+font-family:Georgia, serif;
+color:#fff;
+text-align:center;
+overflow:hidden;
+}
+
+h1{
+margin-top:120px;
+font-size:3em;
+text-shadow:0 0 15px pink;
+}
+
+button{
+margin-top:30px;
+padding:12px 25px;
+font-size:1.2em;
+border:none;
+border-radius:25px;
+background:#ff4d6d;
+color:white;
+cursor:pointer;
+}
+
+#message{
+margin:40px;
+font-size:1.4em;
+opacity:0;
+transition:2s;
+}
+
+/* floating hearts */
+
+.heart{
+position:absolute;
+bottom:-20px;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-110vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Lou ❤️</h1>
+
+<p>Someone has been watching you…</p>
+
+<button onclick="show()">Open the message</button>
+
+<div id="message">
+
+<p>
+One week ago, something unexpected happened…
+</p>
+
+<p>
+You walked into my life and suddenly
+everything felt a little softer,
+a little warmer,
+and a lot more exciting.
+</p>
+
+<p>
+And somehow,
+my Wattpad-coded boy became my Lou.
+</p>
+
+<p>
+Happy one week. ❤️
+</p>
+
+</div>
+
+<script>
+
+function show(){
+document.getElementById("message").style.opacity="1";
+}
+
+function heart(){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(3+Math.random()*3)+"s";
+document.body.appendChild(h);
+
+setTimeout(()=>{h.remove();},6000);
+}
+
+setInterval(heart,300);
+
+</script>
+
+</body>
+</html>
